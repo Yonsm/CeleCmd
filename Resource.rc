@@ -1,0 +1,183 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "Resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "AppDef.h"
+#include <WinRes.h>
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "Resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""AppDef.h""\r\n"
+    "#include <WinRes.h>\r\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#include ""Resource\\\\VER.rc2""\r\r\n"
+    "\r\n"
+    "IDR_DlgMenu RCDATA\r\n"
+    "BEGIN\r\n"
+    "    -1, 2,\r\n"
+    "    I_IMAGENONE, IDOK, TBSTATE_ENABLED, TBSTYLE_BUTTON| TBSTYLE_AUTOSIZE, IDS_OK, 0, NOMENU\r\n"
+    "    I_IMAGENONE, IDCANCEL, TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE, IDS_Cancel, 0, NOMENU\r\n"
+    "END\r\n"
+    "\r\n"
+    "IDR_MainMenu RCDATA\r\n"
+    "BEGIN\r\n"
+    "    IDR_MainMenu, 2,\r\n"
+    "    I_IMAGENONE, IDOK, 0, TBSTYLE_BUTTON| TBSTYLE_AUTOSIZE, IDS_Action, 0, NOMENU\r\n"
+    "    I_IMAGENONE, IDCANCEL, TBSTATE_ENABLED, TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE, IDS_Menu, 0, 0\r\n"
+    "END\r\r\n"
+    "\r\n"
+    "CeleCmd RCDATA \r\n"
+    "BEGIN\r\n"
+    "    L""CCUI\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0""\r\n"
+    "END\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_Main                ICON                    "Resource\\Main.ico"
+IDI_File                ICON                    "Resource\\File.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_Main DIALOG  0, 0, 151, 137
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "CeleCmd"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    ICON            IDI_Main,IDC_STATIC,6,7,20,20
+    LTEXT           "请输入要执行的命令，命令解释引擎将为您执行它。",IDC_Tip,32,7,116,25
+    LTEXT           "命令:",IDC_STATIC,6,36,23,8
+    EDITTEXT        IDC_Path,33,35,98,12,ES_AUTOHSCROLL | ES_NOHIDESEL | ES_WANTRETURN
+    PUSHBUTTON      "...",IDC_Browse,133,35,13,12
+    EDITTEXT        IDC_Log,6,55,139,75,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL
+    CONTROL         "",IDC_STATIC,"SIPPREF",NOT WS_VISIBLE,-10,-10,5,5
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MainMenu MENU 
+BEGIN
+    POPUP "菜单"
+    BEGIN
+        MENUITEM "清除日志",                        IDM_Clear
+        MENUITEM SEPARATOR
+        MENUITEM "文件关联",                        IDM_Assoc
+        MENUITEM SEPARATOR
+        MENUITEM "帮助",                          IDM_Help
+        MENUITEM "关于",                          IDM_About
+        MENUITEM SEPARATOR
+        MENUITEM "退出",                          IDM_Exit
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_AppName             "CeleCmd"
+    IDS_AppDesc             "FOR MY JANE, FOR MY DREAM..."
+    IDS_Copyright           "Copyright (C) 2007-2008, Yonsm.NET."
+	IDS_Help                "<p align=center><br>找不到帮助文件，您可以转到 Internet 上查看在线帮助<br><br><a href='http://www.yonsm.net/CeleCmd/CeleCmd.htm'>HTTP://WWW.Yonsm.NET/CeleCmd</a></p>"
+    IDS_Filter              "所有支持文件 (*.ccs;*.reg;*xml;*.exe;*.dll)|*.ccs;*.reg;*.rgu;*xml;*.exe;*.dll|命令文件 (*.ccs)|*.ccs|注册表文件 (*.reg)|*.reg|配置文件 (*xml)|*xml|可执行文件 (*.exe;*.dll)|*.exe*.dll|所有文件 (*.*)|*.*|"
+    IDS_PromptFile          "如果要在 Smartphone 2003 中浏览获取文件名，必须从以下网站中下载 RFileShell 或 tGetFile 函数库:\n\nRFileShell:\nhttp://www.resco.net/downloads/byplatforms.asp\n\ntGetFile:\nhttp://www.tillanosoft.com/ce/tgetfile.html"
+    IDS_Save                "保存"
+    IDS_Open                "浏览 CCS/REG/XML/EXE/DLL 文件"
+    IDS_OK                  "完成"
+    IDS_Cancel              "取消"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CmdMsg              "%s 命令执行成功。"
+    IDS_CmdErr              "%s 命令执行失败。"
+    IDS_CmdAsk              "确实要执行 %s 命令吗?"
+    IDS_Menu                "菜单"
+    IDS_Action              "执行"
+    IDS_Assoc               "已经把 CCS/REG/PROVXML 文件类型关联到 CeleCmd 命令解释引擎。\n\n您现在可以在资源管理器中直接打开这些文件。"
+    IDS_UnAssoc             "已经取消 CCS/REG/PROVXML 文件类型关联。"
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "Resource\\VER.rc2"
+
+IDR_DlgMenu RCDATA
+BEGIN
+    -1, 2,
+    I_IMAGENONE, IDOK, TBSTATE_ENABLED, TBSTYLE_BUTTON| TBSTYLE_AUTOSIZE, IDS_OK, 0, NOMENU
+    I_IMAGENONE, IDCANCEL, TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE, IDS_Cancel, 0, NOMENU
+END
+
+IDR_MainMenu RCDATA
+BEGIN
+    IDR_MainMenu, 2,
+    I_IMAGENONE, IDOK, 0, TBSTYLE_BUTTON| TBSTYLE_AUTOSIZE, IDS_Action, 0, NOMENU
+    I_IMAGENONE, IDCANCEL, TBSTATE_ENABLED, TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE, IDS_Menu, 0, 0
+END
+
+CeleCmd RCDATA 
+BEGIN
+    L"CCUI\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
